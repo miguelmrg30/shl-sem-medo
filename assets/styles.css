@@ -52,16 +52,23 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #ff
     #shl-page .pv-proofslot strong{font-size:13px;line-height:1.4;display:block}
     #shl-page .pv-proofslot small{font-size:11px;line-height:1.5;color:#80758e;display:block;margin-top:9px}
     #shl-page .pv-proofnote{font-size:11px;color:#7a7185;line-height:1.5;margin:13px 0 0}
-    #shl-page .pv-proofcarousel{max-width:600px;margin:24px auto 0}
-    #shl-page .pv-proofcontrols{display:flex;justify-content:center;align-items:center;gap:15px;margin:0 0 20px}
-    #shl-page .pv-proofcontrols button{background:#fff;border:1px solid #d8d1e3;border-radius:8px;padding:10px 15px;min-height:44px;color:var(--pv-navy);font:700 13px/1.4 Arial,sans-serif}
-    #shl-page .pv-proofcontrols button:hover:not(:disabled){background:#eeebf4}
-    #shl-page .pv-proofcontrols button:disabled{opacity:.45}
+    #shl-page .pv-proofcarousel{max-width:100%;margin:24px auto 0}
+    #shl-page .pv-proofcontrols{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+    #shl-page .pv-proofcontrols button{background:#fff;border:1px solid #d8d1e3;border-radius:8px;padding:10px 14px;min-height:44px;color:var(--pv-navy);font:700 13px/1.4 Arial,sans-serif;cursor:pointer}
+    #shl-page .pv-proofcontrols button:hover{background:#eeebf4}
+    #shl-page .pv-proofcontrols button:focus-visible,#shl-page .pv-proofstage:focus-visible{outline:3px solid var(--pv-pink,#e8114b);outline-offset:3px}
     #shl-page .pv-proofcontrols span{font:400 12px/1.4 Arial,sans-serif;color:#62596e;white-space:nowrap}
-    #shl-page .pv-realproof{max-width:600px;margin:0 auto}
-    #shl-page [data-proof-slide][hidden]{display:none}
-    #shl-page .pv-realproof img{display:block;width:100%;height:auto;border-radius:12px}
-    #shl-page .pv-realproof figcaption{font-size:12px;line-height:1.5;color:#685e75;margin-top:12px;text-align:center}
+    #shl-page .pv-proofcontrols [data-proof-pause]{font-size:12px}
+    #shl-page .pv-proofstage{position:relative;height:480px;overflow:hidden;touch-action:pan-y;isolation:isolate}
+    #shl-page .pv-realproof{position:absolute;top:12px;left:50%;width:38%;max-width:380px;margin:0;padding:15px;border:1px solid #e4e0eb;border-radius:18px;background:#fff;box-shadow:0 10px 32px #10004f0b;transform:translateX(calc(-50% + var(--proof-offset,0%))) scale(.8);transform-origin:center center;opacity:.78;transition:transform .5s ease,opacity .5s ease,box-shadow .5s ease;cursor:pointer;z-index:1}
+    #shl-page .pv-realproof.is-current{transform:translateX(-50%) scale(1);opacity:1;box-shadow:0 14px 35px #10004f16;cursor:default;z-index:2}
+    #shl-page .pv-proofmessages{display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:360px}
+    #shl-page .pv-proofcrop{position:relative;width:100%;overflow:hidden;border-radius:12px;flex:none}
+    #shl-page .pv-proofcrop img{position:absolute;display:block;max-width:none;height:auto;border-radius:0}
+    #shl-page .pv-realproof figcaption{font-size:12px;line-height:1.5;color:#685e75;margin-top:16px;text-align:center;min-height:54px}
+    @media(max-width:680px){#shl-page .pv-realproof{width:84%;max-width:380px;padding:12px}#shl-page .pv-proofmessages{min-height:310px;gap:10px}#shl-page .pv-realproof figcaption{font-size:11px;min-height:66px}#shl-page .pv-proofcontrols{gap:8px}#shl-page .pv-proofcontrols button{padding:9px 11px;font-size:12px}}
+    @media(prefers-reduced-motion:reduce){#shl-page .pv-realproof{transition:none}}
+
     #shl-page .pv-problem{background:var(--pv-navy);color:#fff;border-radius:var(--pv-radius);padding:35px;margin-top:38px;position:relative;overflow:hidden}
     #shl-page .pv-problem h2{font-size:30px;max-width:500px}
     #shl-page .pv-problem p{font-size:15px;line-height:1.7;color:#d6cfea;max-width:520px;margin:17px 0 0}
@@ -147,5 +154,5 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #ff
 #shl-page .pv-argumentlist .pv-icon,#shl-page .pv-offer .pv-icon{color:#e8114b}
 #shl-page .pv-fit .pv-icon{color:#7b6b94}
 #shl-page .pv-guarantee .pv-icon{font-size:30px;width:30px;color:#ff718e}
-#shl-page [data-proof-slide][hidden]{display:none}
+
 
